@@ -5,30 +5,34 @@ import { UpdatePlaylistDto } from './dto/update-playlist.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { FilterPlaylistDto } from './dto/filter-playlist.dto';
 import { SharePlaylistDto } from './dto/share-playlist.dto';
+import { Public } from '../auth/decorators/public.decorator';
 
 @Controller('playlists')
 @UseGuards(JwtAuthGuard)
 export class PlaylistsController {
   constructor(private readonly playlistsService: PlaylistsService) {}
 
-  @Post()
-  create(@Body() createPlaylistDto: CreatePlaylistDto, @Request() req) {
-    return this.playlistsService.create(createPlaylistDto, req.user.id);
-  }
-
+  @Public()
   @Get()
   findAll(@Request() req) {
     return this.playlistsService.findAll(req.user.id);
   }
 
+  @Public()
   @Get('filter')
   filter(@Query() filterDto: FilterPlaylistDto, @Request() req) {
     return this.playlistsService.filterPlaylists(filterDto, req.user.id);
   }
 
+  @Public()
   @Get(':id')
   findOne(@Param('id') id: string, @Request() req) {
     return this.playlistsService.findOne(id, req.user.id);
+  }
+
+  @Post()
+  create(@Body() createPlaylistDto: CreatePlaylistDto, @Request() req) {
+    return this.playlistsService.create(createPlaylistDto, req.user.id);
   }
 
   @Patch(':id')
@@ -41,6 +45,7 @@ export class PlaylistsController {
     return this.playlistsService.remove(id, req.user.id);
   }
 
+  @Public()
   @Post(':id/share')
   share(@Param('id') id: string, @Body() shareDto: SharePlaylistDto, @Request() req) {
     return this.playlistsService.sharePlaylist(id, shareDto, req.user.id);

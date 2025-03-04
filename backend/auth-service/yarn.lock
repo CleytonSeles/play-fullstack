@@ -1073,7 +1073,7 @@
     path-to-regexp "8.2.0"
     swagger-ui-dist "5.19.0"
 
-"@nestjs/testing@^11.0.1":
+"@nestjs/testing@^11.0.11":
   version "11.0.11"
   resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-11.0.11.tgz#38c339de5a9fa7752563b54c3bc48ec90cc42017"
   integrity sha512-SoMIrhRpElV53btmGnEwpIQmXn2Xcztb9ae3lv+eVVnPHQuyB2zlgDIQVNjicbj7+3jdycX52KctOoj2eXEo1Q==
@@ -6020,7 +6020,7 @@ ts-api-utils@^2.0.1:
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-2.0.1.tgz#660729385b625b939aaa58054f45c058f33f10cd"
   integrity sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w==
 
-ts-jest@^29.2.5:
+ts-jest@^29.2.6:
   version "29.2.6"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.2.6.tgz#df53edf8b72fb89de032cfa310abf37582851d9a"
   integrity sha512-yTNZVZqc8lSixm+QGVFcPe6+yj7+TWZwIesuOWvfcn4B9bz5x4NDzVCQQjOs7Hfouu36aEqfEbo9Qpo+gq8dDg==
